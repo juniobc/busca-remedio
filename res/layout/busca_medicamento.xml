@@ -2,19 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:gravity="center">
+    android:orientation="vertical" >
     
-    <Button
+	<EditText
        android:id="@+id/img_btn_buslinha"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
+       android:layout_height="35dp"
        android:layout_margin="10dp"
-       android:background="@drawable/borda_azul"
-       android:text="@string/buscar_medicamentos"
+       android:background="@drawable/borda_branca"
+       android:hint="@string/buscar_medicamentos"
        android:textColor="#FFFFFF"
        android:onClick="buscarMedicamento"
-       android:textSize="12sp" />
+       android:textSize="15sp" />
     
-
 </LinearLayout>
