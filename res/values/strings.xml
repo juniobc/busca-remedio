@@ -2,5 +2,6 @@
 
     <string name="app_name">BuscaRemedio</string>
     <string name="buscar_medicamentos">Buscar Medicamentos</string>
+    <string name="msg_tamanho_caracter">Informe 3 carateres !</string>
 
 </resources>

@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-	<EditText
-       android:id="@+id/img_btn_buslinha"
-       android:layout_width="match_parent"
-       android:layout_height="35dp"
-       android:layout_margin="10dp"
-       android:background="@drawable/borda_branca"
-       android:hint="@string/buscar_medicamentos"
-       android:textColor="#FFFFFF"
-       android:onClick="buscarMedicamento"
-       android:textSize="15sp" />
+	<br.com.goiania.buscaremedio.utils.CustomAutoCompleteView
+        android:id="@+id/autoCompleteTextView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="61dp"
+        android:ems="14"
+        android:hint="@string/buscar_medicamentos" />
     
 </LinearLayout>
