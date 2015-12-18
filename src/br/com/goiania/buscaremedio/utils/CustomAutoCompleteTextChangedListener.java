@@ -1,5 +1,7 @@
 package br.com.goiania.buscaremedio.utils;
 
+import com.android.volley.toolbox.JsonObjectRequest;
+
 import br.com.goiania.buscaremedio.BuscaMedicamento;
 import br.com.goiania.buscaremedio.R;
 import android.content.Context;
@@ -13,6 +15,7 @@ import android.widget.MultiAutoCompleteTextView;
 public class CustomAutoCompleteTextChangedListener implements TextWatcher{
 	
 	public static BuscaMedicamento mainActivity;
+	private JsonObjectRequest jsonObject;
  
     public static final String TAG = "CustomAutoCompleteTextChangedListener.java";
     Context context;
@@ -45,6 +48,8 @@ public class CustomAutoCompleteTextChangedListener implements TextWatcher{
 		mainActivity.adapter.notifyDataSetChanged();
         
         if(userInput.length() >= 3){
+        	
+        	jsonObject = new BuscaMedicamento().execute("teste", null, url3);
             
             mainActivity.adapter = new ListaMedicamentos(context,R.layout.lista_medicamentos,new String[]{"teste","teste3"});
         	
