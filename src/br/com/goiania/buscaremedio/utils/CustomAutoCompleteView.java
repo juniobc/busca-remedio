@@ -24,8 +24,15 @@ public class CustomAutoCompleteView extends AutoCompleteTextView {
     // this is how to disable AutoCompleteTextView filter
     @Override
     protected void performFiltering(final CharSequence text, final int keyCode) {
-        String filterText = "";
-        super.performFiltering(text, keyCode);
+        
+		String filterText;
+		
+		if(text.length() < 3)
+			filterText = "";
+		else
+			filterText = text.toString();
+		
+		super.performFiltering(filterText, keyCode);
     }
  
     /*

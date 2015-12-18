@@ -41,33 +41,20 @@ public class CustomAutoCompleteTextChangedListener implements TextWatcher{
         Log.e(TAG, "User input: " + userInput);
  
         mainActivity = ((BuscaMedicamento) context);
+		
+		mainActivity.adapter.notifyDataSetChanged();
         
-        if(userInput.length() == 3){
-        	
-        	mainActivity.adapter.notifyDataSetChanged();
+        if(userInput.length() >= 3){
             
             mainActivity.adapter = new ListaMedicamentos(context,R.layout.lista_medicamentos,new String[]{"teste","teste3"});
-    		
-            mainActivity.myAutoComplete.setAdapter(mainActivity.adapter);
         	
-        }
-        
-        /*Handler handler = new Handler(); 
-        handler.postDelayed(new Runnable() { 
-             public void run() { 
-            	 Log.e(TAG, "teste");
-            	 mainActivity.adapter.notifyDataSetChanged();
-                 
-                 mainActivity.adapter = new ListaMedicamentos(context,R.layout.lista_medicamentos,new String[]{});
-         		
-                 mainActivity.myAutoComplete.setAdapter(mainActivity.adapter);
-             } 
-        }, 2000);*/
-        
-        /**/
-        
-        //mainActivity.myAutoComplete.showDropDown();
-        //mainActivity.myAutoComplete.requestFocus();
+        }else{
+			
+			mainActivity.adapter = new ListaMedicamentos(context,R.layout.lista_medicamentos,new String[]{"Informe 3 caracteres!"});
+			
+		}
+		
+		mainActivity.myAutoComplete.setAdapter(mainActivity.adapter);
          
     }
  
