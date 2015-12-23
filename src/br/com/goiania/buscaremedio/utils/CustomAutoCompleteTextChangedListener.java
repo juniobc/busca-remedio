@@ -49,7 +49,7 @@ public class CustomAutoCompleteTextChangedListener implements TextWatcher{
         
         if(userInput.length() >= 3){
         	
-        	jsonObject = new BuscaMedicamento().execute("teste", null, url3);
+        	new BuscaMedicamento().execute("teste");
             
             mainActivity.adapter = new ListaMedicamentos(context,R.layout.lista_medicamentos,new String[]{"teste","teste3"});
         	
